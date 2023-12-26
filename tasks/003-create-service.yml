@@ -6,3 +6,11 @@
     owner: root
     group: root
     mode: 0644
+
+- name: Create Nomad Server Directory
+  file:
+    path: /opt/nomad/server
+    state: directory
+    owner: nomad
+    group: nomad
+    mode: 0755
