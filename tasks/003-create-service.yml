@@ -14,3 +14,19 @@
     owner: nomad
     group: nomad
     mode: 0755
+
+- name: Create Nomad Client Directory
+  file:
+    path: /opt/nomad/client
+    state: directory
+    owner: nomad
+    group: nomad
+    mode: 0755
+
+- name: Create Nomad Plugins Directory
+  file:
+    path: /opt/nomad/plugins
+    state: directory
+    owner: nomad
+    group: nomad
+    mode: 0755
