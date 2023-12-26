@@ -1,4 +1,14 @@
 ---
+- name: Create IPv4 directory
+  become: yes
+  become_user: root
+  file:
+    path: "/proc/sys/net/ipv4/"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
 - name: Set dinamic port range
   template:
     src: ip_local_port_range.j2
