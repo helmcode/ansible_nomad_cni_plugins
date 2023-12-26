@@ -1,0 +1,8 @@
+---
+- name: Set dinamic port range
+  template:
+    src: ip_local_port_range.j2
+    dest: "/proc/sys/net/ipv4/ip_local_port_range"
+    owner: root
+    group: root
+    mode: 0644

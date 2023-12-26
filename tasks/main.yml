@@ -1,4 +1,16 @@
 ---
 - include_tasks: 001-setup-cni-plugin.yml
   tags:
-    - nomad_cni_plugins_setup
+    - nomad_cni_plugins_setup_cni_plugin
+
+- include_tasks: 002-dinamic-port-range.yml
+  tags:
+    - nomad_cni_plugins_dinamic_port_range
+
+- include_tasks: 003-create-service.yml
+  tags:
+    - nomad_create_service
+
+- include_tasks: 004-setup-config-files.yml
+  tags:
+    - nomad_setup_config_files

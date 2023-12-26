@@ -1,0 +1,29 @@
+---
+- name: Create Nomad Config File
+  template:
+    src: nomad.hcl.j2
+    dest: "/etc/nomad.d/nomad.hcl"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Create Nomad Server Config File
+  template:
+    src: server.hcl.j2
+    dest: "/etc/nomad.d/server.hcl"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Create Nomad Client Config File
+  template:
+    src: client.hcl.j2
+    dest: "/etc/nomad.d/client.hcl"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: restart nomad service
+  service:
+    name: nomad
+    state: restarted

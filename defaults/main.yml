@@ -6,3 +6,11 @@ ip_tables_files:
   - bridge-nf-call-arptables
   - bridge-nf-call-ip6tables
   - bridge-nf-call-iptables
+
+nomad_datacenter: "dc1"
+nomad_data_dir: "/opt/nomad"
+
+nomad_server_enable: false
+nomad_num_servers: 1
+
+nomad_client_enable: false
