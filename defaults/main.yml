@@ -7,10 +7,12 @@ ip_tables_files:
   - bridge-nf-call-ip6tables
   - bridge-nf-call-iptables
 
+nomad_user_service: "nomad"
+
 nomad_datacenter: "dc1"
 nomad_data_dir: "/opt/nomad"
 
-nomad_server_enable: false
+nomad_server_enable: "false"
 nomad_num_servers: 1
 
-nomad_client_enable: false
+nomad_client_enable: "false"
