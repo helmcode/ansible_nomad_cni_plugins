@@ -1,4 +1,12 @@
 ---
+- name: Create Nomad Config Directory
+  file:
+    path: /etc/nomad.d
+    state: directory
+    owner: root
+    group: root
+    mode: 755
+
 - name: Create Nomad Config File
   template:
     src: nomad.hcl.j2

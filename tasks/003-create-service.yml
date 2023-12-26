@@ -6,11 +6,3 @@
     owner: root
     group: root
     mode: 0644
-
-- name: Create Nomad Config Directory
-  become: yes
-  become_user: root
-  file:
-    path: /etc/nomad.d
-    state: directory
-    mode: 700
