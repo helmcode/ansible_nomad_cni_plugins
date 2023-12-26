@@ -7,25 +7,9 @@
     group: root
     mode: 0644
 
-- name: Create Nomad Server Directory
+- name: Create Nomad Daemon Directory
   file:
-    path: /opt/nomad/server
-    state: directory
-    owner: nomad
-    group: nomad
-    mode: 0755
-
-- name: Create Nomad Client Directory
-  file:
-    path: /opt/nomad/client
-    state: directory
-    owner: nomad
-    group: nomad
-    mode: 0755
-
-- name: Create Nomad Plugins Directory
-  file:
-    path: /opt/nomad/plugins
+    path: /opt/nomad
     state: directory
     owner: nomad
     group: nomad
