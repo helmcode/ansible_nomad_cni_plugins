@@ -1,0 +1,32 @@
+---
+- name: Create CNI Binary Directory
+  become: yes
+  become_user: root
+  file:
+    path: /opt/cni/bin
+    state: directory
+
+- name: Download CNI Plugin
+  become: yes
+  become_user: root
+  unarchive:
+    src: "https://github.com/containernetworking/plugins/releases/download/{{ cni_plugin_version }}/cni-plugins-linux-{{ architecture }}-v1.0.0.tgz"
+    dest: /opt/cni/bin
+    remote_src: yes
+
+- name: Setup IP Tables files
+  become: yes
+  become_user: root
+  lineinfile:
+    path: "/proc/sys/net/bridge/{{ item }}"
+    regex: '^1'
+    line: 1
+  loop: "{{ ip_tables_files }}"
+
+- name: Create bridge file
+  template:
+    src: bridge.conf.j2
+    dest: "/etc/sysctl.d/bridge.conf"
+    owner: root
+    group: root
+    mode: 0644

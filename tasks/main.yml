@@ -1,0 +1,4 @@
+---
+- include_tasks: 001-setup-cni-plugin.yml
+  tags:
+    - nomad_cni_plugins_setup
