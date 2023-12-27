@@ -14,5 +14,9 @@ nomad_data_dir: "/opt/nomad"
 
 nomad_server_enable: "false"
 nomad_num_servers: 1
+nomad_acl_enable: "false"
+nomad_acl_token_ttl: "30s"
+nomad_acl_policy_ttl: "60s"
+nomad_acl_role_ttl: "60s"
 
 nomad_client_enable: "false"
