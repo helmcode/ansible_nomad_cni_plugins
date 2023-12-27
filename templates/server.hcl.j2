@@ -1,3 +1,6 @@
+data_dir  = "{{ nomad_data_dir }}/data"
+bind_addr = "{{ nomad_bind_addr }}"
+
 server {
     enabled = {{ nomad_server_enable }}
     bootstrap_expect = {{ nomad_num_servers }}
@@ -8,4 +11,19 @@ acl {
     token_ttl  = "{{ nomad_acl_token_ttl }}"
     policy_ttl = "{{ nomad_acl_policy_ttl }}"
     role_ttl   = "{{ nomad_acl_role_ttl }}"
+}
+
+consul {
+    address = "{{ nomad_consul_addr }}"
+    token   = "{{ nomad_consul_token }}"
+
+    server_service_name = "{{ nomad_consul_server_service_name }}"
+    client_service_name = "{{ nomad_consul_client_service_name }}"
+
+    # Enables automatically registering the services.
+    auto_advertise = {{ nomad_consul_auto_advertise }}
+
+    # Enabling the server and client to bootstrap using Consul.
+    server_auto_join = {{ nomad_consul_server_auto_join }}
+    client_auto_join = {{ nomad_consul_client_auto_join }}
 }
