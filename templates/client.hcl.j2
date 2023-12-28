@@ -1,3 +1,9 @@
 client {
     enabled = {{ nomad_client_enable }}
 }
+
+plugin "raw_exec" {
+    config {
+        enabled = {{ nomad_plugin_raw_exec_enable }}
+    }
+}

@@ -28,3 +28,4 @@ nomad_consul_server_auto_join: "false"
 nomad_consul_client_auto_join: "false"
 
 nomad_client_enable: "false"
+nomad_plugin_raw_exec_enable: "false"
