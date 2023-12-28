@@ -7,3 +7,7 @@ plugin "raw_exec" {
         enabled = {{ nomad_plugin_raw_exec_enable }}
     }
 }
+
+consul {
+    address = "{{ nomad_consul_addr }}"
+}
